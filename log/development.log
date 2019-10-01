@@ -1,0 +1,634 @@
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:4
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:4
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateRecipes (20190924184225)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "recipe_type" varchar, "cuisine" varchar, "difficulty" varchar, "cook_time" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190924184225_create_recipes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190924184225"]]
+  ↳ bin/rails:4
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-09-24 18:42:50.456177"], ["updated_at", "2019-09-24 18:42:50.456177"]]
+  ↳ bin/rails:4
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Started GET "/" for ::1 at 2019-09-25 15:10:58 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/revelo/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to AddAttributesToRecipe (20190924194715)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "recipes" ADD "cook_method" text[0m
+  ↳ db/migrate/20190924194715_add_attributes_to_recipe.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "recipes" ADD "ingredients" text[0m
+  ↳ db/migrate/20190924194715_add_attributes_to_recipe.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190924194715"]]
+  ↳ bin/rails:4
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Started GET "/" for ::1 at 2019-09-25 15:11:34 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/revelo/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:4
+  Rendered recipes/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 210ms (Views: 203.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/recipes/new" for ::1 at 2019-09-25 15:11:36 -0300
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 45ms (Views: 18.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/recipes/new" for ::1 at 2019-09-25 15:25:49 -0300
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 25ms (Views: 14.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/recipes/new" for ::1 at 2019-09-25 15:27:08 -0300
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 30ms (Views: 27.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/new" for ::1 at 2019-09-25 15:34:53 -0300
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 29ms (Views: 26.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes" for ::1 at 2019-09-25 15:38:38 -0300
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t1FSLwuo/rfDu59Sdu7Qy0/GYXVQPfE2Cccs7vOsVmtE/s8vYxAXpcvC+tcVu70jpd5XqOJomdfvxe6Y9qjelg==", "recipe"=>{"title"=>"Bolo de cenoura", "recipe_type"=>"Médio", "cuisine"=>"doce", "difficulty"=>"Médio", "cook_time"=>"45 minutos", "ingredients"=>"Cenoura, farinha, ovo, oleo de soja e chocolate", "cook_method"=>"Faça um bolo e uma cobertura de chocolate"}, "commit"=>"Enviar"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:17
+  [1m[36mRecipe Create (0.4ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "recipe_type", "cuisine", "difficulty", "cook_time", "created_at", "updated_at", "cook_method", "ingredients") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Bolo de cenoura"], ["recipe_type", "Médio"], ["cuisine", "doce"], ["difficulty", "Médio"], ["cook_time", 45], ["created_at", "2019-09-25 18:38:38.860096"], ["updated_at", "2019-09-25 18:38:38.860096"], ["cook_method", "Faça um bolo e uma cobertura de chocolate"], ["ingredients", "Cenoura, farinha, ovo, oleo de soja e chocolate"]]
+  ↳ app/controllers/recipes_controller.rb:17
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:17
+Redirected to http://localhost:3000/recipes/1
+Completed 302 Found in 14ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/recipes/1" for ::1 at 2019-09-25 15:38:38 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:7
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 16ms (Views: 13.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-09-25 15:45:32 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:4
+  Rendered recipes/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 32ms (Views: 29.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/recipes/1" for ::1 at 2019-09-25 15:45:38 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:7
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 35ms (Views: 28.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/recipes/1/edit" for ::1 at 2019-09-25 15:45:40 -0300
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/edit.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 31ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/1/edit" for ::1 at 2019-09-25 15:46:08 -0300
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/edit.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 31ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/1/edit" for ::1 at 2019-09-25 15:47:15 -0300
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:22
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 37ms (Views: 25.8ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/recipes/1" for ::1 at 2019-09-25 15:47:29 -0300
+  
+ActionController::RoutingError (No route matches [PATCH] "/recipes/1"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/recipes/1" for ::1 at 2019-09-25 15:50:01 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:7
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 23ms (Views: 11.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/recipes/1/edit" for ::1 at 2019-09-25 15:50:04 -0300
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:22
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/edit.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 33ms (Views: 26.8ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/recipes/1" for ::1 at 2019-09-25 15:50:07 -0300
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jIi16ejUVoYXcwT1a023D1j0jEBixMmflnJLlAbpnZ19uqd4rGbrtq3BncqmWcQBxDO3RU8NeJKn4Xy3iUoliA==", "recipe"=>{"title"=>"Bolo de cenoura", "recipe_type"=>"Médio", "cuisine"=>"doce", "difficulty"=>"Médio", "cook_time"=>"45", "ingredients"=>"Cenoura, farinha, ovo, oleo de soja e chocolate", "cook_method"=>"Faça um bolo e uma cobertura de chocolate"}, "commit"=>"Enviar", "id"=>"1"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:26
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:27
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:27
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:29
+Redirected to http://localhost:3000/recipes/1
+Completed 302 Found in 18ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/recipes/1" for ::1 at 2019-09-25 15:50:07 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:7
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 57ms (Views: 52.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/1/edit" for ::1 at 2019-09-25 15:50:10 -0300
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:22
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/edit.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 38ms (Views: 33.8ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/recipes/1" for ::1 at 2019-09-25 15:50:20 -0300
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4OCxLK1AZ7V4VNmszeul5IhZCRKHniBL/2z2iwHmYI4R0qO96fLahcLmQJMA/9bqFJ4yF6pXkUbO/8GojkXYmw==", "recipe"=>{"title"=>"Bolo de chocolate", "recipe_type"=>"Médio", "cuisine"=>"doce", "difficulty"=>"Médio", "cook_time"=>"45", "ingredients"=>"Cenoura, farinha, ovo, oleo de soja e chocolate", "cook_method"=>"Faça um bolo e uma cobertura de chocolate"}, "commit"=>"Enviar", "id"=>"1"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:26
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:27
+  [1m[36mRecipe Update (0.7ms)[0m  [1m[33mUPDATE "recipes" SET "title" = ?, "updated_at" = ? WHERE "recipes"."id" = ?[0m  [["title", "Bolo de chocolate"], ["updated_at", "2019-09-25 18:50:21.011783"], ["id", 1]]
+  ↳ app/controllers/recipes_controller.rb:27
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:29
+Redirected to http://localhost:3000/recipes/1
+Completed 302 Found in 21ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/recipes/1" for ::1 at 2019-09-25 15:50:21 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:7
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2019-09-25 15:52:02 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:4
+  Rendered recipes/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 37ms (Views: 34.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/recipes/new" for ::1 at 2019-09-25 15:52:06 -0300
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 30ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/new" for ::1 at 2019-09-25 15:52:18 -0300
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 51ms (Views: 48.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-25 15:52:22 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:4
+  Rendered recipes/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/new" for ::1 at 2019-09-25 15:52:24 -0300
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 65ms (Views: 61.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/new" for ::1 at 2019-09-25 15:52:36 -0300
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 35ms (Views: 32.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes" for ::1 at 2019-09-25 15:52:54 -0300
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TESFXmFS7VDJIY/v2xNdY/lIghKo1yC4DcDnNrfAA+u/6xheCeoEQsFY6mq4RjCLE1C0zxqCSFnrwiVAssSLFg==", "recipe"=>{"title"=>"Bolo de brigadeiro", "recipe_type"=>"Médio", "cuisine"=>"doce", "difficulty"=>"Médio", "cook_time"=>"45 minutos", "ingredients"=>"Cenoura, farinha, ovo, oleo de soja e chocolate", "cook_method"=>"Faça um bolo e uma cobertura de chocolate"}, "commit"=>"Enviar"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:17
+  [1m[36mRecipe Create (0.8ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "recipe_type", "cuisine", "difficulty", "cook_time", "created_at", "updated_at", "cook_method", "ingredients") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Bolo de brigadeiro"], ["recipe_type", "Médio"], ["cuisine", "doce"], ["difficulty", "Médio"], ["cook_time", 45], ["created_at", "2019-09-25 18:52:54.522987"], ["updated_at", "2019-09-25 18:52:54.522987"], ["cook_method", "Faça um bolo e uma cobertura de chocolate"], ["ingredients", "Cenoura, farinha, ovo, oleo de soja e chocolate"]]
+  ↳ app/controllers/recipes_controller.rb:17
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:17
+Redirected to http://localhost:3000/recipes/2
+Completed 302 Found in 22ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/recipes/2" for ::1 at 2019-09-25 15:52:54 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:7
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 20ms (Views: 16.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-09-25 15:53:00 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:4
+  Rendered recipes/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/2" for ::1 at 2019-09-25 15:53:07 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:7
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 37ms (Views: 32.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-09-25 15:53:08 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:4
+  Rendered recipes/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 38ms (Views: 34.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/2" for ::1 at 2019-09-25 15:53:17 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:7
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 50ms (Views: 44.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/2/edit" for ::1 at 2019-09-25 15:53:19 -0300
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:22
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/edit.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 40ms (Views: 34.9ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/recipes/2" for ::1 at 2019-09-25 15:53:26 -0300
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iGNtRoj2GTiBfzOD24Jg7MvHwqKQD+E/0jL4lq2L534pRfre73qkfO321PhHNCVBj0qNPVa0zLhwIwdb2FTPSA==", "recipe"=>{"title"=>"Bolo de morango", "recipe_type"=>"Médio", "cuisine"=>"doce", "difficulty"=>"Médio", "cook_time"=>"45", "ingredients"=>"Cenoura, farinha, ovo, oleo de soja e chocolate", "cook_method"=>"Faça um bolo e uma cobertura de chocolate"}, "commit"=>"Enviar", "id"=>"2"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:26
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:27
+  [1m[36mRecipe Update (0.6ms)[0m  [1m[33mUPDATE "recipes" SET "title" = ?, "updated_at" = ? WHERE "recipes"."id" = ?[0m  [["title", "Bolo de morango"], ["updated_at", "2019-09-25 18:53:26.025007"], ["id", 2]]
+  ↳ app/controllers/recipes_controller.rb:27
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:29
+Redirected to http://localhost:3000/recipes/2
+Completed 302 Found in 21ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/recipes/2" for ::1 at 2019-09-25 15:53:26 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:7
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-09-25 15:53:28 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:4
+  Rendered recipes/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 35ms (Views: 32.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/2" for ::1 at 2019-09-25 15:54:28 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:7
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 37ms (Views: 31.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/2/edit" for ::1 at 2019-09-25 15:54:30 -0300
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:22
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/edit.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 38ms (Views: 33.0ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/recipes/2" for ::1 at 2019-09-25 15:59:47 -0300
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j2N/BHzmszH88FuV5Ag1IiSdyiWpwOMn/myDCYz3qkguReicG2oOdZB5vO54vnCPYBCFum97zqBcfXzE+SiCfg==", "recipe"=>{"title"=>"Bolo de morango", "recipe_type"=>"Médio", "cuisine"=>"doce", "difficulty"=>"Médio", "cook_time"=>"45", "ingredients"=>"Cenoura, farinha, ovo, oleo de soja e chocolate", "cook_method"=>"Faça um bolo e uma cobertura de chocolate"}, "commit"=>"Enviar", "id"=>"2"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:26
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:27
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:27
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:29
+Redirected to http://localhost:3000/recipes/2
+Completed 302 Found in 12ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/recipes/2" for ::1 at 2019-09-25 15:59:47 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:7
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-09-25 15:59:48 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:4
+  Rendered recipes/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 38ms (Views: 34.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-09-25 16:17:02 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:4
+  Rendered recipes/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 33ms (Views: 21.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/recipes/1" for ::1 at 2019-09-25 16:17:04 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:29
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 31ms (Views: 24.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/recipes/1/edit" for ::1 at 2019-09-25 16:17:05 -0300
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:29
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (7.9ms)
+  Rendered recipes/edit.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 41ms (Views: 37.1ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/recipes/1" for ::1 at 2019-09-25 16:17:07 -0300
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6VSgHu+W9rscOTgyf0OsHVnOk9PktXnVuVM6W++qHtMYZrKPqyRLi6aLoQ2yV98TxQmo1sl8yNiIwA14YAmmxg==", "recipe"=>{"title"=>"Bolo de chocolate", "recipe_type"=>"Médio", "cuisine"=>"doce", "difficulty"=>"Médio", "cook_time"=>"45", "ingredients"=>"Cenoura, farinha, ovo, oleo de soja e chocolate", "cook_method"=>"Faça um bolo e uma cobertura de chocolate"}, "commit"=>"Enviar", "id"=>"1"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:29
+  [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:23
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:24
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:24
+Redirected to http://localhost:3000/recipes/1
+Completed 302 Found in 15ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/recipes/1" for ::1 at 2019-09-25 16:17:07 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:29
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-09-25 16:17:08 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:4
+  Rendered recipes/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 40ms (Views: 37.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-09-25 16:23:18 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:6
+  Rendered collection of recipes/_recipe.html.erb [2 times] (0.9ms)
+  Rendered recipes/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 22ms (Views: 19.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-09-25 16:28:48 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:6
+  Rendered collection of recipes/_recipe.html.erb [2 times] (1.2ms)
+  Rendered recipes/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-09-25 16:29:26 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:5
+  Rendered collection of recipes/_recipe.html.erb [2 times] (1.6ms)
+  Rendered recipes/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 26ms (Views: 23.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-09-25 16:30:21 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:5
+  Rendered collection of recipes/_recipe.html.erb [2 times] (2.3ms)
+  Rendered recipes/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 39ms (Views: 36.2ms | ActiveRecord: 0.3ms)
+
+
